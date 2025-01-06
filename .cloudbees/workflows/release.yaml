@@ -4,8 +4,8 @@ name: Release
 on:
   workflow_dispatch:
 env:
-  ORG_ID: 484e57bd-7b0b-4a37-448b-ab8ca8f9a684
-  APP_ID: dcaf825d-c6a1-43bd-8fb6-016e8a66335e
+  ORG_ID: 10f39560-4828-4148-92bd-f26e09f05f8f
+  APP_ID: 5629a03d-79a9-402b-97fd-9ec515bcb8d4
 jobs:
   release:
     steps:
