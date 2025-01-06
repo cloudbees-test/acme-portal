@@ -16,3 +16,13 @@ jobs:
           token: ${{ secrets.CBP_PAT }}
           org-id: ${{ env.ORG_ID }}
           component-id: ${{ env.APP_ID }}
+    needs:
+      - acme-release-approval
+  acme-release-approval:
+    timeout-minutes: 4320
+    delegates: cloudbees-io/manual-approval/custom-job.yml@v1
+    with:
+      approvers: ""
+      disallowLaunchByUser: false
+      notifyAllEligibleUsers: false
+      instructions: A release of the Acme application has been requested.  Approval is required.
