@@ -7,13 +7,6 @@ env:
   ORG_ID: 10f39560-4828-4148-92bd-f26e09f05f8f
   APP_ID: 5629a03d-79a9-402b-97fd-9ec515bcb8d4
 jobs:
-  acme-release-approval:
-    timeout-minutes: 4320
-    delegates: cloudbees-io/manual-approval/custom-job.yml@v1
-    with:
-      approvers: 69fe7606-13a7-11eb-b8f1-42010a83ae35
-      disallowLaunchByUser: false
-      instructions: A release has been requested.  Is this approved?
   release:
     steps:
       - name: Deploy linked components
@@ -23,5 +16,3 @@ jobs:
           token: ${{ secrets.CBP_PAT }}
           org-id: ${{ env.ORG_ID }}
           component-id: ${{ env.APP_ID }}
-    needs:
-      - acme-release-approval
