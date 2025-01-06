@@ -16,3 +16,4 @@ jobs:
           token: ${{ secrets.CBP_PAT }}
           org-id: ${{ env.ORG_ID }}
           component-id: ${{ env.APP_ID }}
+
